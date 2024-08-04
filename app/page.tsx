@@ -1,19 +1,37 @@
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
+import { HomeLayout } from 'fumadocs-ui/home-layout';
+import type { ReactNode } from 'react';
 
+function Layout({ children }: { children: ReactNode }) {
+	return <HomeLayout>{children}</HomeLayout>;
+}
 export default function HomePage() {
-  return (
-    <main className="flex h-screen flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">Hello World</h1>
-      <p className="text-fd-muted-foreground">
-        You can open{' '}
-        <Link
-          href="/docs"
-          className="text-fd-foreground font-semibold underline"
-        >
-          /docs
-        </Link>{' '}
-        and see the documentation.
-      </p>
-    </main>
-  );
+	return (
+		<Layout>
+			<main className='flex h-[calc(100vh-56px)] flex-col justify-center text-center'>
+				<h1 className='mb-4 text-2xl font-bold'>
+					Добро пожаловать на страницу документации
+				</h1>
+				<p className='text-fd-muted-foreground'>
+					Можете перейти по{' '}
+					<Link
+						href='/docs'
+						className='text-fd-foreground font-semibold underline'
+					>
+						/docs
+					</Link>{' '}
+					и посмотреть документацию.
+				</p>
+				<p className='text-fd-muted-foreground'>
+					или вернуться на сайт аука{' '}
+					<Link
+						href='https://betterauction.ru'
+						className='text-fd-foreground font-semibold underline'
+					>
+						betterauction.ru
+					</Link>
+				</p>
+			</main>
+		</Layout>
+	);
 }

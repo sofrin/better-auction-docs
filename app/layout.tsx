@@ -1,26 +1,45 @@
-import { DocsLayout } from 'fumadocs-ui/layout';
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { Inter } from 'next/font/google';
-import type { ReactNode } from 'react';
-import { docsOptions } from '@/app/layout.config';
-
+import { ViewTransitions } from 'next-view-transitions';
+import { I18nProvider } from 'fumadocs-ui/i18n';
 const inter = Inter({
-	subsets: ['latin'],
+	subsets: ['latin', 'cyrillic'],
 });
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout({
+	params,
+	children,
+}: {
+	params: { lang: string };
+	children: React.ReactNode;
+}) {
 	return (
-		<html
-			lang='en'
-			className={inter.className}
-			suppressHydrationWarning
-		>
-			<body>
-				<RootProvider>
-					<DocsLayout {...docsOptions}>{children}</DocsLayout>;
-				</RootProvider>
-			</body>
-		</html>
+		<ViewTransitions>
+			<html
+				lang={'ru'}
+				className={inter.className}
+				suppressHydrationWarning
+			>
+				<body>
+					<I18nProvider
+						locale={'ru'}
+						translations={{
+							nextPage: 'Следующая страница',
+							previousPage: 'Предыдущая страница',
+							searchNoResult: 'Ничего не найдено',
+							chooseTheme: 'Выберите тему',
+							lastUpdate: 'Последнее обновление',
+							toc: 'Содержание',
+							tocNoHeadings: 'Нет заголовков',
+							search: 'Поиск',
+							chooseLanguage: 'Выберите язык',
+						}}
+					>
+						<RootProvider>{children}</RootProvider>
+					</I18nProvider>
+				</body>
+			</html>
+		</ViewTransitions>
 	);
 }
