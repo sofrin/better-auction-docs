@@ -36,7 +36,22 @@ export default function Layout({
 							chooseLanguage: 'Выберите язык',
 						}}
 					>
-						<RootProvider>{children}</RootProvider>
+						<RootProvider
+							search={{
+								links: [
+									['Главная', '/'],
+									['Документация', '/docs'],
+								],
+								hotKey: [
+									{
+										display: 'Л',
+										key: 'л', // key code, or a function determining whether the key is pressed
+									},
+								],
+							}}
+						>
+							{children}
+						</RootProvider>
 					</I18nProvider>
 				</body>
 			</html>
