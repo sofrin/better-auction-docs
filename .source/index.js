@@ -1,0 +1,21 @@
+import { toRuntime } from "fumadocs-mdx"
+import * as file_0 from "../content/legal/index.mdx?collection=legalDocs&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_1 from "../content/legal/terms-of-service.mdx?collection=legalDocs&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_2 from "../content/legal/terms-of-use.mdx?collection=legalDocs&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_3 from "../content/docs/changelog.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_4 from "../content/docs/index.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_5 from "../content/docs/auc/index.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_6 from "../content/docs/auc/roulette.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_7 from "../content/docs/auc/video.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_8 from "../content/docs/auc/wheel.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_9 from "../content/docs/int/DonationAlerts.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_10 from "../content/docs/int/index.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_11 from "../content/docs/int/Twitch.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_12 from "../content/docs/settings/auction.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_13 from "../content/docs/settings/index.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_14 from "../content/docs/settings/timer.mdx?collection=docsData&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+import * as file_15 from "../content/docs/meta.json?collection=docsMeta&hash=2c433699f0d7449c2c3c5b7669bccf3d4cc5d6df26a8c5e1fc9939c574ef1b11"
+export const legalDocs = [toRuntime("doc", file_0, {"path":"index.mdx","absolutePath":"D:/js/docs/content/legal/index.mdx"}),toRuntime("doc", file_1, {"path":"terms-of-service.mdx","absolutePath":"D:/js/docs/content/legal/terms-of-service.mdx"}),toRuntime("doc", file_2, {"path":"terms-of-use.mdx","absolutePath":"D:/js/docs/content/legal/terms-of-use.mdx"})]
+export const docsData = [toRuntime("doc", file_3, {"path":"changelog.mdx","absolutePath":"D:/js/docs/content/docs/changelog.mdx"}),toRuntime("doc", file_4, {"path":"index.mdx","absolutePath":"D:/js/docs/content/docs/index.mdx"}),toRuntime("doc", file_5, {"path":"auc\\index.mdx","absolutePath":"D:/js/docs/content/docs/auc/index.mdx"}),toRuntime("doc", file_6, {"path":"auc\\roulette.mdx","absolutePath":"D:/js/docs/content/docs/auc/roulette.mdx"}),toRuntime("doc", file_7, {"path":"auc\\video.mdx","absolutePath":"D:/js/docs/content/docs/auc/video.mdx"}),toRuntime("doc", file_8, {"path":"auc\\wheel.mdx","absolutePath":"D:/js/docs/content/docs/auc/wheel.mdx"}),toRuntime("doc", file_9, {"path":"int\\DonationAlerts.mdx","absolutePath":"D:/js/docs/content/docs/int/DonationAlerts.mdx"}),toRuntime("doc", file_10, {"path":"int\\index.mdx","absolutePath":"D:/js/docs/content/docs/int/index.mdx"}),toRuntime("doc", file_11, {"path":"int\\Twitch.mdx","absolutePath":"D:/js/docs/content/docs/int/Twitch.mdx"}),toRuntime("doc", file_12, {"path":"settings\\auction.mdx","absolutePath":"D:/js/docs/content/docs/settings/auction.mdx"}),toRuntime("doc", file_13, {"path":"settings\\index.mdx","absolutePath":"D:/js/docs/content/docs/settings/index.mdx"}),toRuntime("doc", file_14, {"path":"settings\\timer.mdx","absolutePath":"D:/js/docs/content/docs/settings/timer.mdx"})]
+export const docsMeta = [toRuntime("meta", file_15, {"path":"meta.json","absolutePath":"D:/js/docs/content/docs/meta.json"})]
+export const legalMeta = []

@@ -1,7 +1,8 @@
 import { DocsLayout } from 'fumadocs-ui/layout';
 import type { ReactNode } from 'react';
-import { docsOptions } from '../layout.config';
+import { baseOptions } from '../layout.config';
 import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle';
+import { legal } from '../source';
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<DocsLayout
@@ -11,19 +12,20 @@ export default function Layout({ children }: { children: ReactNode }) {
 						options={[
 							{
 								title: 'Docs',
-								description: 'Documentation pages',
+								description: 'Документация по сайту',
 								url: '/docs',
 							},
 							{
 								title: 'Legal',
-								description: 'Regulatory documents',
+								description: 'Правила пользования сайтом',
 								url: '/legal',
 							},
 						]}
 					/>
 				),
 			}}
-			{...docsOptions}
+			{...baseOptions}
+			tree={legal.pageTree}
 		>
 			{children}
 		</DocsLayout>

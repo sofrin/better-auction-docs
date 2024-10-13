@@ -1,6 +1,6 @@
 import { type DocsLayoutProps } from 'fumadocs-ui/layout';
 import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
-import { docs } from '@/app/source';
+import { source as docs } from '@/app/source';
 import { Link } from 'next-view-transitions';
 // shared configuration
 export const baseOptions: HomeLayoutProps = {
@@ -27,5 +27,4 @@ export const baseOptions: HomeLayoutProps = {
 export const docsOptions: DocsLayoutProps = {
 	...baseOptions,
 	tree: docs.pageTree,
-	sidebar: {},
 };
