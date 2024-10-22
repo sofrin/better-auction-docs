@@ -7,13 +7,7 @@ const inter = Inter({
 	subsets: ['latin', 'cyrillic'],
 });
 
-export default function Layout({
-	params,
-	children,
-}: {
-	params: { lang: string };
-	children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<ViewTransitions>
 			<html

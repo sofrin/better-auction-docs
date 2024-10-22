@@ -1,9 +1,8 @@
-import { type DocsLayoutProps } from 'fumadocs-ui/layout';
-import { type HomeLayoutProps } from 'fumadocs-ui/home-layout';
 import { source as docs } from '@/app/source';
 import { Link } from 'next-view-transitions';
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 // shared configuration
-export const baseOptions: HomeLayoutProps = {
+export const baseOptions: BaseLayoutProps = {
 	nav: {
 		title: 'Better Auction Docs',
 	},
@@ -21,10 +20,4 @@ export const baseOptions: HomeLayoutProps = {
 		},
 	],
 	githubUrl: 'https://github.com/sofrin/better-auction-docs',
-};
-
-// docs layout configuration
-export const docsOptions: DocsLayoutProps = {
-	...baseOptions,
-	tree: docs.pageTree,
 };
