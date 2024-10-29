@@ -1,4 +1,3 @@
-import { source as docs } from '@/app/source';
 import { Link } from 'next-view-transitions';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 // shared configuration
