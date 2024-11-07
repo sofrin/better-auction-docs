@@ -12,12 +12,12 @@ export default function Layout({ children }: { children: ReactNode }) {
 						options={[
 							{
 								title: 'Docs',
-								description: 'Documentation pages',
+								description: 'Документация по сайту',
 								url: '/docs',
 							},
 							{
 								title: 'Legal',
-								description: 'Regulatory documents',
+								description: 'Правила пользования сайтом',
 								url: '/legal',
 							},
 						]}
