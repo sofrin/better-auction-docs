@@ -6,7 +6,29 @@ import { I18nProvider } from 'fumadocs-ui/i18n';
 const inter = Inter({
 	subsets: ['latin', 'cyrillic'],
 });
-
+import { Metadata } from 'next';
+import { siteConfig } from '@/lib/config';
+export const metadata: Metadata = {
+	title: {
+		default: siteConfig.name,
+		template: `%s - ${siteConfig.name}`,
+	},
+	metadataBase: new URL(siteConfig.url),
+	description: siteConfig.description,
+	keywords: ['Stream', 'Twitch', 'Auction', 'DonationAlerts'],
+	applicationName: 'Better Auction Docs',
+	generator: 'Next.js',
+	robots: 'index, follow',
+	creator: 'Sofrin',
+	openGraph: {
+		title: siteConfig.name,
+		description: siteConfig.description,
+		url: siteConfig.url,
+		siteName: siteConfig.name,
+		locale: 'ru',
+		type: 'website',
+	},
+};
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<ViewTransitions>
