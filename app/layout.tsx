@@ -28,6 +28,11 @@ export const metadata: Metadata = {
 		locale: 'ru',
 		type: 'website',
 	},
+	icons: {
+		icon: '/favicon.ico',
+		shortcut: '/favicon-16x16.png',
+		apple: '/apple-touch-icon.png',
+	},
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
