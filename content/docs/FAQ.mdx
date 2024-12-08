@@ -1,0 +1,33 @@
+---
+title: FAQ
+description: Ответы на часто задаваемые вопросы
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+	<Accordion
+		title='Украдут ли мои деньги с DonationAlerts?'
+		id='Украдут ли мои деньги с DonationAlerts?'
+	>
+		Нет.
+
+    Для авторизации используется  [OAuth](https://ru.wikipedia.org/wiki/OAuth) на DonationAlerts.com
+    better-auction получает права только на получение информации о новых донатах.
+
+    Интеграцию всегда можно отозвать в любой момент в личном кабинете DonationAlerts.
+
+    [Подробнее об авторизации DonationAlerts.com](https://www.donationalerts.com/apidoc#authorization)
+
+    </Accordion>
+
+  <Accordion
+    title='Почему мой вариант не выпадает?'
+    id='Почему мой вариант не выпадает?'
+  >
+    Вам просто не везёт.
+
+    Победитель определяется случайным образом на клиенте (браузере стримера). Никакой "подкрутки" нет и быть не может.
+
+  </Accordion>
+</Accordions>

@@ -8,6 +8,7 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 export default async function Page(props: {
 	params: Promise<{ slug?: string[] }>;
@@ -28,7 +29,7 @@ export default async function Page(props: {
 				{page.data.description}
 			</DocsDescription>
 			<DocsBody className='text-pretty'>
-				<MDX components={{ ...defaultMdxComponents }} />
+				<MDX components={{ ...defaultMdxComponents, Accordion, Accordions }} />
 			</DocsBody>
 		</DocsPage>
 	);
