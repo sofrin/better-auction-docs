@@ -1,14 +1,24 @@
 // source.config.ts
-import { defineDocs } from "fumadocs-mdx/config";
-var { docs: docsData, meta: docsMeta } = defineDocs({
-  docs: { dir: "./content/docs" }
+import {
+  defineConfig,
+  defineDocs,
+  frontmatterSchema,
+  metaSchema
+} from "fumadocs-mdx/config";
+var docs = defineDocs({
+  docs: {
+    schema: frontmatterSchema
+  },
+  meta: {
+    schema: metaSchema
+  }
 });
-var { docs: legalDocs, meta: legalMeta } = defineDocs({
-  docs: { dir: "./content/legal" }
+var source_config_default = defineConfig({
+  mdxOptions: {
+    // MDX options
+  }
 });
 export {
-  docsData,
-  docsMeta,
-  legalDocs,
-  legalMeta
+  source_config_default as default,
+  docs
 };
