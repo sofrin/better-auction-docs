@@ -1,6 +1,0 @@
-{
-  "type": "folder",
-  "name": "Docs",
-  "pages": ["index", "FAQ", "------", "..."],
-  "root": true
-}
