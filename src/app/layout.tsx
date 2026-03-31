@@ -1,8 +1,8 @@
 import { RootProvider } from "fumadocs-ui/provider/next";
 import "./global.css";
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { DocsLayout } from "@/layouts/docs";
 import { baseOptions } from "@/lib/layout.shared";
 import { source } from "@/lib/source";
 
