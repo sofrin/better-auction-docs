@@ -1,5 +1,6 @@
-'use client';
-import * as Primitive from 'fumadocs-core/toc';
+"use client";
+import * as Primitive from "fumadocs-core/toc";
+import { useOnChange } from "fumadocs-core/utils/use-on-change";
 import {
   type ComponentProps,
   createContext,
@@ -8,10 +9,9 @@ import {
   useEffect,
   useEffectEvent,
   useRef,
-} from 'react';
-import { cn } from '../../lib/cn';
-import { mergeRefs } from '../../lib/merge-refs';
-import { useOnChange } from 'fumadocs-core/utils/use-on-change';
+} from "react";
+import { cn } from "../../lib/cn";
+import { mergeRefs } from "../../lib/merge-refs";
 
 const TOCContext = createContext<Primitive.TOCItemType[]>([]);
 
@@ -33,19 +33,25 @@ export function TOCProvider({ toc, children, ...props }: TOCProviderProps) {
   );
 }
 
-export function TOCScrollArea({ ref, className, ...props }: ComponentProps<'div'>) {
+export function TOCScrollArea({
+  ref,
+  className,
+  ...props
+}: ComponentProps<"div">) {
   const viewRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
       ref={mergeRefs(viewRef, ref)}
       className={cn(
-        'relative min-h-0 text-sm ms-px overflow-auto [scrollbar-width:none] mask-[linear-gradient(to_bottom,transparent,white_16px,white_calc(100%-16px),transparent)] py-3',
+        "relative min-h-0 text-sm ms-px overflow-auto [scrollbar-width:none] mask-[linear-gradient(to_bottom,transparent,white_16px,white_calc(100%-16px),transparent)] py-3",
         className,
       )}
       {...props}
     >
-      <Primitive.ScrollProvider containerRef={viewRef}>{props.children}</Primitive.ScrollProvider>
+      <Primitive.ScrollProvider containerRef={viewRef}>
+        {props.children}
+      </Primitive.ScrollProvider>
     </div>
   );
 }
@@ -55,7 +61,7 @@ interface TocThumbInfo {
   height: number;
 }
 
-interface TocThumbProps extends ComponentProps<'div'> {
+interface TocThumbProps extends ComponentProps<"div"> {
   containerRef: RefObject<HTMLElement | null>;
 }
 
@@ -68,8 +74,8 @@ export function TocThumb({ containerRef, ...props }: TocThumbProps) {
     const container = containerRef.current;
     if (!element || !container) return;
 
-    element.style.setProperty('--fd-top', `${info.top}px`);
-    element.style.setProperty('--fd-height', `${info.height}px`);
+    element.style.setProperty("--fd-top", `${info.top}px`);
+    element.style.setProperty("--fd-height", `${info.height}px`);
   }
 
   function calc(active: string[]): TocThumbInfo | null {
@@ -81,15 +87,22 @@ export function TocThumb({ containerRef, ...props }: TocThumbProps) {
     let lower = 0;
 
     for (const item of active) {
-      const element = container.querySelector<HTMLElement>(`a[href="#${item}"]`);
+      const element = container.querySelector<HTMLElement>(
+        `a[href="#${item}"]`,
+      );
       if (!element) continue;
 
       const styles = getComputedStyle(element);
 
-      upper = Math.min(upper, element.offsetTop + parseFloat(styles.paddingTop));
+      upper = Math.min(
+        upper,
+        element.offsetTop + parseFloat(styles.paddingTop),
+      );
       lower = Math.max(
         lower,
-        element.offsetTop + element.clientHeight - parseFloat(styles.paddingBottom),
+        element.offsetTop +
+          element.clientHeight -
+          parseFloat(styles.paddingBottom),
       );
     }
 

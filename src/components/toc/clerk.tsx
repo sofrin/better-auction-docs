@@ -1,5 +1,6 @@
-'use client';
-import * as Primitive from 'fumadocs-core/toc';
+"use client";
+import * as Primitive from "fumadocs-core/toc";
+import { useI18n } from "fumadocs-ui/contexts/i18n";
 import {
   type ComponentProps,
   type ReactNode,
@@ -8,11 +9,10 @@ import {
   useMemo,
   useRef,
   useState,
-} from 'react';
-import { cn } from '../../lib/cn';
-import { TocThumb, useTOCItems } from './index';
-import { mergeRefs } from '../../lib/merge-refs';
-import { useI18n } from 'fumadocs-ui/contexts/i18n';
+} from "react";
+import { cn } from "../../lib/cn";
+import { mergeRefs } from "../../lib/merge-refs";
+import { TocThumb, useTOCItems } from "./index";
 
 interface ComputedSVG {
   width: number;
@@ -20,7 +20,7 @@ interface ComputedSVG {
   content: ReactNode;
 }
 
-export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
+export function TOCItems({ ref, className, ...props }: ComponentProps<"div">) {
   const containerRef = useRef<HTMLDivElement>(null);
   const items = useTOCItems();
   const [svg, setSvg] = useState<ComputedSVG>();
@@ -32,7 +32,7 @@ export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
     let h = 0;
     let upperBottom = 0;
     let upperX = 0;
-    let d = '';
+    let d = "";
     const output: ReactNode[] = [];
 
     for (let i = 0; i < items.length; i++) {
@@ -45,7 +45,10 @@ export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
       const styles = getComputedStyle(element);
       const x = getLineOffset(item.depth) + 0.5,
         top = element.offsetTop + parseFloat(styles.paddingTop),
-        bottom = element.offsetTop + element.clientHeight - parseFloat(styles.paddingBottom);
+        bottom =
+          element.offsetTop +
+          element.clientHeight -
+          parseFloat(styles.paddingBottom);
 
       w = Math.max(x + 8, w);
       h = Math.max(h, bottom);
@@ -84,7 +87,13 @@ export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
     }
 
     output.unshift(
-      <path key="path" d={d} className="stroke-fd-primary" strokeWidth="1" fill="none" />,
+      <path
+        key="path"
+        d={d}
+        className="stroke-fd-primary"
+        strokeWidth="1"
+        fill="none"
+      />,
     );
     setSvg({
       content: output,
@@ -132,7 +141,7 @@ export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
       )}
       <div
         ref={mergeRefs(containerRef, ref)}
-        className={cn('flex flex-col', className)}
+        className={cn("flex flex-col", className)}
         {...props}
       />
     </>
@@ -179,9 +188,9 @@ function ThumbBox() {
       className="absolute size-1 bg-fd-primary rounded-full transition-transform"
       style={{
         translate: `${getLineOffset(original.depth) - 1.5}px calc(${
-          isUp ? 'var(--fd-top)' : 'var(--fd-top) + var(--fd-height)'
+          isUp ? "var(--fd-top)" : "var(--fd-top) + var(--fd-height)"
         } - 1.5px)`,
-        scale: original._step !== undefined ? '0' : '1',
+        scale: original._step !== undefined ? "0" : "1",
       }}
     />
   );
@@ -212,7 +221,10 @@ export function TOCItem({
     return {
       offset,
       upperOffset: index > 0 ? getLineOffset(items[index - 1].depth) : offset,
-      lowerOffset: index + 1 < items.length ? getLineOffset(items[index + 1].depth) : offset,
+      lowerOffset:
+        index + 1 < items.length
+          ? getLineOffset(items[index + 1].depth)
+          : offset,
     };
   }, [items, item]);
 
@@ -221,7 +233,7 @@ export function TOCItem({
       href={item.url}
       {...props}
       className={cn(
-        'group prose relative py-1.5 text-sm scroll-m-4 text-fd-muted-foreground hover:text-fd-accent-foreground transition-colors wrap-anywhere first:pt-0 last:pb-0 data-[active=true]:text-fd-primary',
+        "group prose relative py-1.5 text-sm scroll-m-4 text-fd-muted-foreground hover:text-fd-accent-foreground transition-colors wrap-anywhere first:pt-0 last:pb-0 data-[active=true]:text-fd-primary",
         props.className,
       )}
       style={{
@@ -251,9 +263,9 @@ export function TOCItem({
       )}
       <div
         className={cn(
-          'absolute inset-y-0 w-px bg-fd-foreground/10 -z-1',
-          offset !== upperOffset && 'top-1.5',
-          offset !== lowerOffset && 'bottom-1.5',
+          "absolute inset-y-0 w-px bg-fd-foreground/10 -z-1",
+          offset !== upperOffset && "top-1.5",
+          offset !== lowerOffset && "bottom-1.5",
         )}
         style={{
           insetInlineStart: offset,
